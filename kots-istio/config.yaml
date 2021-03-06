@@ -1,0 +1,29 @@
+apiVersion: kots.io/v1beta1
+kind: Config
+metadata:
+  name: config-sample
+spec:
+  groups:
+    - name: istio_operator_config
+      title: Istio Operator Configuration
+      description: Istio Operator Configuration
+      items:
+    - name: istio_config
+      title: Istio Configuration
+      description: Istio Configuration
+      items:
+        - name: istio_namespace
+          title: Istio-System Namespace
+          help_text: The namespace where Istio will be installed
+          type: text
+          default: "istio-system"
+        - name: istio_version
+          title: Istio Version
+          help_text: Istio version (formatted 1-9-0)
+          type: text
+          default: "1-9-0"
+        - name: istio_profile
+          title: Istio Profile
+          help_text: i.e. "demo", "default"
+          type: text
+          default: "demo"

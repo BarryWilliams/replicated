@@ -1,0 +1,14 @@
+apiVersion: kots.io/v1beta1
+kind: Application
+metadata:
+  name: istio
+spec:
+  title: Istio
+  icon: https://istio.io/latest/favicons/android-192x192.png
+  statusInformers:
+    - '{{repl ConfigOption "istio_namespace"}}/deployment/istiod-{{repl ConfigOption "istio_version"}}'
+  ports:
+    - serviceName: "istio-ingressgateway"
+      servicePort: 15021
+      localPort: 15021
+      applicationUrl: "http://example-istio"

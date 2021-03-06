@@ -1,0 +1,18 @@
+apiVersion: install.istio.io/v1alpha1
+metadata:
+  name: istio
+  namespace: '{{repl ConfigOption "istio_namespace"}}'
+kind: IstioOperator
+spec:
+  namespace: '{{repl ConfigOption "istio_namespace"}}'
+  profile: '{{repl ConfigOption "istio_profile"}}'
+  hub: gcr.io/istio-testing
+  tag: latest
+  revision: '{{repl ConfigOption "istio_version"}}'
+  meshConfig:
+    accessLogFile: /dev/stdout
+    enableTracing: true
+  components:
+    egressGateways:
+    - name: istio-egressgateway
+      enabled: true
