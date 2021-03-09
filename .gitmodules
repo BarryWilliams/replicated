@@ -1,3 +1,6 @@
 [submodule "istio"]
 	path = istio
 	url = https://github.com/istio/istio
+[submodule "airsonic"]
+	path = airsonic
+	url = https://github.com/BarryWilliams/airsonic
