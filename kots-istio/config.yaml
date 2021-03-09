@@ -1,0 +1,10 @@
+apiVersion: kots.io/v1beta1
+kind: Config
+metadata:
+  name: config-sample
+spec:
+  groups:
+    - name: istio_operator_config
+      title: Istio Operator Configuration
+      description: Istio Operator Configuration
+      items: []

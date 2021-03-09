@@ -1,0 +1,14 @@
+apiVersion: kots.io/v1beta1
+kind: Application
+metadata:
+  name: istio
+spec:
+  title: Istio
+  icon: https://istio.io/latest/favicons/android-192x192.png
+  statusInformers:
+    - deployment/istiod
+  ports:
+    - serviceName: "istiod"
+      servicePort: 8080
+      localPort: 8080
+      applicationUrl: "http://example-istio"
